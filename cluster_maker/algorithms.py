@@ -42,7 +42,8 @@ def assign_clusters(X: np.ndarray, centroids: np.ndarray) -> np.ndarray:
     distances = np.linalg.norm(diff, axis=2)  # (n_samples, k)
     #the line above is incorrect, we should collapse the features for the distance
     #and not the cluster centres
-    labels = np.argmin(distances, axis=1)
+    labels = np.argmin(distances, axis=1)   #it should minimise the distance
+    #we should assign record to the nearest centroid
     return labels
 
 
